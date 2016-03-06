@@ -22,5 +22,14 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
-    ];
+    ];  
+    public function lanes() {
+        return $this->hasMany('\App\Lane');
+    } 
+    public function tasks() {
+        return $this->hasMany('\App\Task');
+    } 
+    public function tags() {
+        return $this->hasMany('\App\Tag');
+    }          
 }
